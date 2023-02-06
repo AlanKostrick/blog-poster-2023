@@ -6,16 +6,16 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import EditPostPage from './pages/EditPost';
 import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
+import Layout from './pages/Layout';
 import NewPostPage from './pages/NewPost';
 import PostsRootLayout from './pages/PostsRoot';
-import RootLayout from './pages/Root';
 import { action as addOrEditPostAction } from './components/PostForm';
 import { action as deletePost } from './components/PostsList';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <RootLayout />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },

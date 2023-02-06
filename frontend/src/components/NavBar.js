@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import classes from './MainNavigation.module.css';
+import classes from './NavBar.module.css';
 
-function MainNavigation() {
+function NavBar() {
   return (
     <header className={classes.header}>
       <nav>
@@ -43,4 +43,4 @@ function MainNavigation() {
   );
 }
 
-export default MainNavigation;
+export default NavBar;
