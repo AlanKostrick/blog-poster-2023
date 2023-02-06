@@ -1,7 +1,5 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-
-const eventRoutes = require('./routes/events');
 const postRoutes = require('./routes/posts');
 const authRoutes = require('./routes/auth');
 
@@ -16,8 +14,6 @@ app.use((req, res, next) => {
 });
 
 app.use(authRoutes);
-
-app.use('/events', eventRoutes);
 
 app.use('/posts', postRoutes);
 

@@ -1,6 +1,6 @@
 .form {
-  max-width: 40rem;
   margin: 2rem auto;
+  max-width: 40rem;
 }
 
 .form label,
@@ -23,13 +23,13 @@
 }
 
 .actions button {
-  font: inherit;
-  cursor: pointer;
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
   background-color: var(--color-gray-300);
-  color: var(--color-gray-800);
+  border-radius: 4px;
   border: none;
+  color: var(--color-gray-800);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.5rem 1.5rem;
 }
 
 .actions button[type='button'] {

@@ -1,27 +1,27 @@
 .container {
-    max-width: 50rem;
     margin: 2rem auto;
+    max-width: 50rem;
     text-align: center;
 }
 
 .container img {
-    width: 30rem;
     border-radius: 4px;
+    width: 30rem;
 }
 
 .actions {
+    align-items: center;
     display: flex;
     gap: 1rem;
     justify-content: center;
-    align-items: center;
 }
 
 .actions a,
 .actions button {
+    cursor: pointer;
+    font: inherit;
     padding: 0.25rem 1rem;
     text-decoration: none;
-    font: inherit;
-    cursor: pointer;
 }
 
 .actions button {

@@ -1,9 +1,11 @@
 .header {
-  max-width: 60rem;
-  margin: auto;
-  padding: 2rem;
   display: flex;
+  font-size: 22px;
+  font-weight: 700;
   justify-content: space-between;
+  margin: auto;
+  max-width: 60rem;
+  padding: 2rem;
 }
 
 .list {
@@ -12,17 +14,16 @@
 }
 
 .list a {
-  text-decoration: none;
   color: var(--color-primary-400);
+  text-decoration: none;
 }
 
 .list a:hover {
+  border: 1px solid white;
   color: var(--color-primary-200);
   font-weight: 800;
   transition: .5s;
-  border: 1px solid white;
 }
-
 
 .list a.active {
   color: var(--color-primary-800);
