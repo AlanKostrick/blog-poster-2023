@@ -1,10 +1,13 @@
 import PageContent from '../components/PageContent';
 
 function HomePage() {
+
+  const token = sessionStorage.getItem('token');
+
   return (
     <PageContent title="Welcome!">
       <p>Check out our blog posts</p>
-      <p>Please log in to contribute to our content</p>
+      {!token && <p>Please log in to contribute to our content</p>}
     </PageContent>
   );
 }
