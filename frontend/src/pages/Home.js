@@ -1,6 +1,6 @@
 import PageContent from '../components/PageContent';
 
-function HomePage() {
+const HomePage = () => {
 
   const token = sessionStorage.getItem('token');
 

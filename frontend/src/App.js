@@ -8,7 +8,7 @@ import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
 import Layout from './pages/Layout';
 import NewPostPage from './pages/NewPost';
-import PostsRootLayout from './pages/PostsRoot';
+import PostsLayout from './pages/PostsLayout';
 import { action as addOrEditPostAction } from './components/PostForm';
 import { action as deletePost } from './components/PostsList';
 
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'posts',
-        element: <PostsRootLayout />,
+        element: <PostsLayout />,
         children: [
           {
             index: true,

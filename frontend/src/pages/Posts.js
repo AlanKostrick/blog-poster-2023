@@ -3,7 +3,7 @@ import { Await, defer, json, useLoaderData } from 'react-router-dom';
 import PostsList from '../components/PostsList';
 import { Suspense } from 'react';
 
-function PostsPage() {
+const PostsPage = () => {
     const { posts } = useLoaderData();
 
     return (
@@ -27,10 +27,9 @@ async function loadPosts() {
                 status: 500,
             }
         );
-    } else {
-        const resData = await response.json();
-        return resData.posts;
     }
+    const resData = await response.json();
+    return resData.posts;
 }
 
 export function loader() {

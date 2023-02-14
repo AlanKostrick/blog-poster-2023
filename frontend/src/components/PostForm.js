@@ -7,22 +7,22 @@ import {
     useNavigation
 } from 'react-router-dom';
 
-import classes from './PostForm.module.css';
 import { getAuthToken } from '../util/auth';
+import style from './PostForm.module.css';
 
-function PostForm({ method, post }) {
+const PostForm = ({ method, post }) => {
     const data = useActionData();
     const navigate = useNavigate();
     const navigation = useNavigation();
 
     const isSubmitting = navigation.state === 'submitting';
 
-    function cancelHandler() {
+    const cancelPost = () => {
         navigate('..');
     }
 
     return (
-        <Form method={method} className={classes.form}>
+        <Form method={method} className={style.form}>
             {data && data.errors && (
                 <ul>
                     {Object.values(data.errors).map((err) => (
@@ -70,8 +70,8 @@ function PostForm({ method, post }) {
                     defaultValue={post ? post.description : ''}
                 />
             </p>
-            <div className={classes.actions}>
-                <button type="button" onClick={cancelHandler} disabled={isSubmitting}>
+            <div className={style.actions}>
+                <button type="button" onClick={cancelPost} disabled={isSubmitting}>
                     Cancel
                 </button>
                 <button disabled={isSubmitting}>
@@ -121,6 +121,6 @@ export async function action({ request, params }) {
         throw json({ message: 'Could not save post.' }, { status: 500 });
     }
 
-    return redirect('/posts/' + params.postId);
+    return method === 'PATCH' ? redirect('/posts/' + params.postId) : redirect('/posts');
 }
 

@@ -10,7 +10,7 @@ import PostItem from '../components/PostItem';
 import { Suspense } from 'react';
 import { getAuthToken } from '../util/auth';
 
-function PostDetailPage() {
+const PostDetailPage = () => {
     const { post } = useRouteLoaderData('post-detail');
 
     return (

@@ -1,12 +1,12 @@
 import { Link, useSubmit } from 'react-router-dom';
 
-import classes from './PostItem.module.css';
+import style from './PostItem.module.css';
 
-function PostItem({ post }) {
+const PostItem = ({ post }) => {
 
     const submit = useSubmit();
 
-    function startDeleteHandler() {
+    const confirmDelete = () => {
         const proceed = window.confirm('Are you sure?');
 
         if (proceed) {
@@ -15,14 +15,14 @@ function PostItem({ post }) {
     }
 
     return (
-        <article className={classes.container}>
+        <article className={style.container}>
             <img src={post.image} alt={post.title} />
             <h1>{post.title}</h1>
             <time>{post.date}</time>
             <p>{post.description}</p>
-            <menu className={classes.actions}>
+            <menu className={style.actions}>
                 <Link to="edit">Edit</Link>
-                <button onClick={startDeleteHandler}>Delete</button>
+                <button onClick={confirmDelete}>Delete</button>
             </menu>
         </article>
     );
