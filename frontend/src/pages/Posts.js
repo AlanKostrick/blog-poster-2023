@@ -2,12 +2,13 @@ import { Await, defer, json, useLoaderData } from 'react-router-dom';
 
 import PostsList from '../components/PostsList';
 import { Suspense } from 'react';
+import loadingGif from '../assets/loading.gif';
 
 const PostsPage = () => {
     const { posts } = useLoaderData();
 
     return (
-        <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
+        <Suspense fallback={<div style={{ textAlign: 'center' }}><img style={{ borderRadius: '10%', height: 'auto', width: '100px' }} src={loadingGif} alt='loading' /></div>}>
             <Await resolve={posts}>
                 {(loadedPosts) => <PostsList posts={loadedPosts} />}
             </Await>

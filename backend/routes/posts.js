@@ -11,10 +11,11 @@ const {
 const router = express.Router();
 
 router.get('/', async (req, res, next) => {
-    console.log(req.token);
     try {
         const posts = await getAll();
-        res.json({ posts: posts });
+        setTimeout(() => {
+            res.json({ posts: posts });
+        }, 2000);
     } catch (error) {
         next(error);
     }
