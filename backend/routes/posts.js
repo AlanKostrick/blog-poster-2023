@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
         const posts = await getAll();
         setTimeout(() => {
             res.json({ posts: posts });
-        }, 2000);
+        }, 500);
     } catch (error) {
         next(error);
     }

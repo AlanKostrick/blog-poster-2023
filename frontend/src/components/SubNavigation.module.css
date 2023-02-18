@@ -17,7 +17,11 @@
   text-decoration: none;
 }
 
-.list a:hover,
+.list a:hover {
+  background-color: var(--color-primary-200);
+}
+
+
 .list a:active,
 .list a.active {
   background-color: var(--color-primary-600);

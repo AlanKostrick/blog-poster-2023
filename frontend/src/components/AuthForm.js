@@ -1,5 +1,6 @@
-import { Form, Link, useActionData, useNavigation, useSearchParams } from 'react-router-dom';
+import { Form, useActionData, useNavigation, useSearchParams } from 'react-router-dom';
 
+import AuthNavigation from './AuthNavigation';
 import style from './AuthForm.module.css';
 
 const AuthForm = () => {
@@ -12,6 +13,7 @@ const AuthForm = () => {
 
   return (
     <>
+      <AuthNavigation />
       <Form method="post" className={style.form}>
         <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
         {data && data.errors && (
@@ -35,9 +37,6 @@ const AuthForm = () => {
           <input id="password" type="password" name="password" required />
         </p>
         <div className={style.actions}>
-          <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
-            {isLogin ? 'Sign Up' : 'Login'}
-          </Link>
           <button disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : isLogin ? 'Sign in' : 'Save'}</button>
         </div>
       </Form>

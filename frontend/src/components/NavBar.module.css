@@ -18,13 +18,6 @@
   text-decoration: none;
 }
 
-.list a:hover {
-  border: 1px solid white;
-  color: var(--color-primary-200);
-  font-weight: 800;
-  transition: .5s;
-}
-
 .list a.active {
   color: var(--color-primary-800);
   text-decoration: underline;

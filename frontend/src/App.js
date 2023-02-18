@@ -7,6 +7,7 @@ import EditPostPage from './pages/EditPost';
 import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
 import Layout from './pages/Layout';
+import LoginContextProvider from './components/login-context/LoginContext';
 import NewPostPage from './pages/NewPost';
 import PostsLayout from './pages/PostsLayout';
 import { action as addOrEditPostAction } from './components/PostForm';
@@ -63,7 +64,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+
+
+
+  return (
+    <LoginContextProvider>
+      <RouterProvider router={router} />
+    </LoginContextProvider>
+  )
 }
 
 export default App;

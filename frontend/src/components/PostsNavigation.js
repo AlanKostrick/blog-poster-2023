@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import style from './PostsNavigation.module.css';
+import style from './SubNavigation.module.css';
 
 const PostsNavigation = () => (
     <header className={style.header}>

@@ -1,8 +1,6 @@
 import style from './PageContent.module.css';
 
-const PageContent = ({ title, children }) => {
-
-  const name = sessionStorage.getItem('name');
+const PageContent = ({ name, title, children }) => {
 
   return (
     <div className={style.content}>
