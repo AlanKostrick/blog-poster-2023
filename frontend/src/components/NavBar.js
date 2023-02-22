@@ -44,7 +44,8 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            {token !== 'undefined' && token !== undefined && token.length > 0 ?
+            {/* TODO: more efficient way to unpack and validate token data */}
+            {token !== 'undefined' && token !== undefined && (token && token.length > 0) ?
               < NavLink
                 to=""
                 onClick={() => logout()}

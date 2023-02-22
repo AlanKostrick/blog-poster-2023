@@ -20,8 +20,11 @@ const HomePage = () => {
     setAuthStatus(getStatus());
   }, [authDispatch]);
 
+
+
+  //TODO: more efficient process to unpack name data and check for its existence
   return (
-    <PageContent name={name !== 'undefined' && name !== undefined && name.length > 0 ? name : 'guest'} title="Welcome!">
+    <PageContent name={name !== null && name !== 'null' && name !== 'undefined' && name !== undefined && name.length > 0 ? name : 'guest'} title="Welcome!">
       <p>Check out our blog posts</p>
     </PageContent>
   );
