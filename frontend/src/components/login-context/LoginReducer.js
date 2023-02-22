@@ -1,5 +1,4 @@
 import {
-    LOGIN,
     LOGOUT,
     STATUS
 } from './constants';
@@ -12,9 +11,6 @@ export const authReducer = (state, action) => {
             window.sessionStorage.setItem('name', '');
             window.sessionStorage.setItem('token', '');
             return redirect('/');
-        case LOGIN:
-
-            break;
         case STATUS:
             const name = window.sessionStorage.getItem('name');
             const token = window.sessionStorage.getItem('token');
